@@ -1,10 +1,13 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { PercentagesProvider } from '../contexts/percentagesProvider';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <PercentagesProvider>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </PercentagesProvider>
   );
 }
 

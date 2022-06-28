@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Form from './components/Form';
+import Total from './components/Total';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Form />
+      <Total />
     </div>
   );
 }
