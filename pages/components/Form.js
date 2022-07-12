@@ -26,7 +26,7 @@ const Form = () => {
     food: 20,
     shopping: 20,
   });
-  const { percentagesValues, setPercentagesValues } = usePercentages();
+  const { setPercentagesValues } = usePercentages();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,18 +43,13 @@ const Form = () => {
   const renderSliderInput = (percentageType) => {
     return (
       <Flex direction='column' gap='5px'>
-        <Text fontWeight='bold'>
-          How much you want to save for {percentageType}?
-        </Text>
+        <Text fontWeight='bold'>How much you want to save for {percentageType}?</Text>
         <Flex>
           <NumberInput
             maxW='100px'
             mr='2rem'
             value={percentages[percentageType]}
-            onChange={(value) =>
-              setPercentages({ ...percentages, [percentageType]: value })
-            }
-          >
+            onChange={(value) => setPercentages({ ...percentages, [percentageType]: value })}>
             <NumberInputField />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -65,18 +60,11 @@ const Form = () => {
             flex='1'
             focusThumbOnChange={false}
             value={percentages[percentageType]}
-            onChange={(value) =>
-              setPercentages({ ...percentages, [percentageType]: value })
-            }
-          >
+            onChange={(value) => setPercentages({ ...percentages, [percentageType]: value })}>
             <SliderTrack>
               <SliderFilledTrack />
             </SliderTrack>
-            <SliderThumb
-              fontSize='sm'
-              boxSize='32px'
-              children={percentages[percentageType]}
-            />
+            <SliderThumb fontSize='sm' boxSize='32px' children={percentages[percentageType]} />
           </Slider>
         </Flex>
       </Flex>
